@@ -968,7 +968,7 @@ util.file_watch("config.json", function(raw)
 end)
 
 --local screen_setup = rotate(270)
-local transform = util.screen_transform(90)
+local transform = util.screen_transform(270)
 
 function node.render()
 --    gl.clear(0, 0, 0, 1)
@@ -977,8 +977,9 @@ function node.render()
     local now = clock.unix()
     scheduler.tick(now)
 
-    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
-    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
-                        WIDTH/2, HEIGHT/2, 0)
+    gl.ortho()
+--    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
+--    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
+--                        WIDTH/2, HEIGHT/2, 0)
     job_queue.tick(now)
 end
