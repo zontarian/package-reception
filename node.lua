@@ -967,6 +967,7 @@ util.file_watch("config.json", function(raw)
     node_config = json.decode(raw)
 end)
 
+-- do screen rotation
 local screen_setup = rotate(270)
 
 function node.render()
