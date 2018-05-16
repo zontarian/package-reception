@@ -973,11 +973,12 @@ local transform = util.screen_transform(270)
 function node.render()
 --    gl.clear(0, 0, 0, 1)
 --    screen_setup()
-    transform()
+--    transform()
     local now = clock.unix()
     scheduler.tick(now)
 
-    gl.ortho()
+    gl.rotate(270, 0,0,1)
+--    gl.ortho()
 --    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
 --    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
 --                        WIDTH/2, HEIGHT/2, 0)
