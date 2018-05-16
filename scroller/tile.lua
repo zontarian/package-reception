@@ -48,7 +48,7 @@ local function draw_scroller(x, y, w, h)
     print("x ".. x .. " y " .. y .. " w ".. w .. ' h ' .. h)
 --    hh = 200
 --    scissors.set(x, y, x+w, y+hh)
-    scissors.set(0,0, 2000,2000)
+    scissors.set(0,0, 1050, 1050)
 
     local now = sys.now()
     local delta = now - last
