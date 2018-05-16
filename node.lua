@@ -967,7 +967,7 @@ util.file_watch("config.json", function(raw)
     node_config = json.decode(raw)
 end)
 
-function rotate(degree)
+local function rotate(degree)
     if degree == 0 then
         return function() end
     elseif degree == 90 then
@@ -992,7 +992,7 @@ function rotate(degree)
     end
 end
 
-function mirror(fn)
+local function mirror(fn)
     return function()
         fn()
         gl.translate(WIDTH, 0)
