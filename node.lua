@@ -764,12 +764,13 @@ local function playlist()
     end
 
     local function tile_bottom(s, e, now)
-        return 0, HEIGHT-50, WIDTH, HEIGHT
+--        return 0, HEIGHT-50, WIDTH, HEIGHT
+        return 0, HEIGHT - 100, WIDTH * 30, HEIGHT
     end
 
     local function tile_bottom_scroller(s, e, now)
 --        return 300, HEIGHT-50, WIDTH, HEIGHT
-        return 300, HEIGHT/2 - 50, WIDTH, HEIGHT / 2
+        return 300, HEIGHT - 100, 2000, HEIGHT
     end
 
     local function tile_bottom_clock(s, e, now)
