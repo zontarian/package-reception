@@ -50,7 +50,7 @@ local function draw_scroller(x, y, w, h)
 --    scissors.set(x, y, x+w, y+hh)
     -- coordinates are rotated, instead of 300, 1870, 300+780, 1870+50 we have
     -- this one
---    scissors.set(0,0, 1920, 910)
+    scissors.set(0,0, 1920, 910)
 
     local now = sys.now()
     local delta = now - last

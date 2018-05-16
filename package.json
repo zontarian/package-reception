@@ -3,5 +3,5 @@
     "author": "Florian Wesch <fw@info-beamer.com> + WG",
     "desc": "Shows textual/image and video information for a reception-style information screen.",
     "repository": "https://github.com/info-beamer/package-reception",
-    "version": "0.3.52"
+    "version": "0.3.53"
 }
