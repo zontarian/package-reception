@@ -774,7 +774,7 @@ local function playlist()
         --        return 300, HEIGHT / 2 - 50, 2000, HEIGHT / 2
 --        print("Height " .. HEIGHT .. ' WIDTH '.. WIDTH)
 --        return 300, HEIGHT / 2 - 50, 2000, HEIGHT / 2
-        return 0, 1000 - 50, 2000, 1000
+        return 0, 1100 - 50, 2000, 1100
     end
 
     local function tile_bottom_clock(s, e, now)
