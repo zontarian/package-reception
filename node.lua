@@ -967,11 +967,13 @@ util.file_watch("config.json", function(raw)
     node_config = json.decode(raw)
 end)
 
-local screen_setup = rotate(270)
+--local screen_setup = rotate(270)
+local transform = util.screen_transform(270)
 
 function node.render()
 --    gl.clear(0, 0, 0, 1)
-    screen_setup()
+--    screen_setup()
+    transform()
     local now = clock.unix()
     scheduler.tick(now)
 
