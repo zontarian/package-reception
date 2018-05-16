@@ -769,9 +769,9 @@ local function playlist()
     end
 
     local function tile_bottom_scroller(s, e, now)
-        return 300, HEIGHT-50, WIDTH, HEIGHT
+--        return 300, HEIGHT-50, WIDTH, HEIGHT
     -- this one works
-        --        return 300, HEIGHT / 2 - 50, 2000, HEIGHT / 2
+                return 300, HEIGHT / 2 - 50, 2000, HEIGHT / 2
 --        print("Height " .. HEIGHT .. ' WIDTH '.. WIDTH)
 --        return 300, HEIGHT / 2 - 50, 2000, HEIGHT / 2
 --        return -800,  600 -  50, 3000,  600
