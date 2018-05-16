@@ -968,7 +968,7 @@ util.file_watch("config.json", function(raw)
 end)
 
 --local screen_setup = rotate(270)
-local transform = util.screen_transform(270)
+local transform = util.screen_transform(180)
 
 function node.render()
 --    gl.clear(0, 0, 0, 1)
