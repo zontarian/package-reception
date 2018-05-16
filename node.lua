@@ -967,20 +967,52 @@ util.file_watch("config.json", function(raw)
     node_config = json.decode(raw)
 end)
 
---local screen_setup = rotate(270)
-local transform = util.screen_transform(270)
+function rotate(degree)
+    if degree == 0 then
+        return function() end
+    elseif degree == 90 then
+        WIDTH, HEIGHT = HEIGHT, WIDTH
+        return function()
+            gl.translate(HEIGHT, 0)
+            gl.rotate(90, 0, 0, 1)
+        end
+    elseif degree == 180 then
+        return function()
+            gl.translate(WIDTH, HEIGHT)
+            gl.rotate(180, 0, 0, 1)
+        end
+    elseif degree == 270 then
+        WIDTH, HEIGHT = HEIGHT, WIDTH
+        return function()
+            gl.translate(0, WIDTH)
+            gl.rotate(-90, 0, 0, 1)
+        end
+    else
+        error("unsupported rotation")
+    end
+end
+
+function mirror(fn)
+    return function()
+        fn()
+        gl.translate(WIDTH, 0)
+        gl.scale(-1, 1)
+    end
+end
+local screen_setup = rotate(270)
+--local transform = util.screen_transform(270)
 
 function node.render()
 --    gl.clear(0, 0, 0, 1)
---    screen_setup()
+    screen_setup()
 --    transform()
     local now = clock.unix()
     scheduler.tick(now)
 
-    gl.rotate(270, 0,0,1)
+--    gl.rotate(270, 0,0,1)
 --    gl.ortho()
---    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
---    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
---                        WIDTH/2, HEIGHT/2, 0)
+    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
+    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
+                        WIDTH/2, HEIGHT/2, 0)
     job_queue.tick(now)
 end
