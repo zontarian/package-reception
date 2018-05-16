@@ -1011,8 +1011,8 @@ function node.render()
 
 --    gl.rotate(270, 0,0,1)
 --    gl.ortho()
-    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
-    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
-                        WIDTH/2, HEIGHT/2, 0)
+--    local fov = math.atan2(HEIGHT, WIDTH*2) * 360 / math.pi
+--    gl.perspective(fov, WIDTH/2, HEIGHT/2, -WIDTH,
+--                        WIDTH/2, HEIGHT/2, 0)
     job_queue.tick(now)
 end
