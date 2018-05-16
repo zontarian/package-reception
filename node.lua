@@ -771,7 +771,7 @@ local function playlist()
     local function tile_bottom_scroller(s, e, now)
 --        return 300, HEIGHT-50, WIDTH, HEIGHT
 --        return 300, HEIGHT - 200, 1500, HEIGHT - 150
-        return 300, HEIGHT / 2 - 50, 2000, HEIGHT / 2
+        return 300, HEIGHT / 1.5 - 50, 2000, HEIGHT / 1.5
     end
 
     local function tile_bottom_clock(s, e, now)
